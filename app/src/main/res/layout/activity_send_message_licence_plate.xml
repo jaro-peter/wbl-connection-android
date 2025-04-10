@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:name=".SendMessageLicencePlate"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#736969">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Back Button -->
+        <Button
+            android:id="@+id/buttonBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#186099"
+            android:text="@string/back"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:contentDescription="@string/logo"
+            android:src="@drawable/logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Send Message Gomb középen -->
+        <TextView
+            android:id="@+id/textSendMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@android:drawable/btn_default"
+            android:backgroundTint="#186099"
+            android:gravity="center"
+            android:paddingStart="24dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="8dp"
+            android:text="@string/send_message"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/buttonBack" />
+
+
+        <EditText
+            android:id="@+id/editTextLicensePlateReceiver"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#DDDDDD"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+            android:hint="@string/license_plate"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:padding="12dp"
+            android:textColor="#DDDDDD"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textSendMessage" />
+
+
+        <TextView
+            android:id="@+id/message1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="25dp"
+            android:backgroundTint="#333333"
+            android:maxWidth="250dp"
+            android:padding="12dp"
+            android:text="@string/message1"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toStartOf="@id/sendButton1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTextLicensePlateReceiver" />
+
+
+        <Button
+            android:id="@+id/sendButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#186099"
+            android:text="@string/send"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@id/message1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/message1" />
+
+        <!-- Második sor -->
+        <TextView
+            android:id="@+id/message2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="25dp"
+            android:backgroundTint="#333333"
+            android:maxWidth="250dp"
+            android:padding="12dp"
+            android:text="@string/message2"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toStartOf="@id/sendButton2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/message1" />
+
+        <Button
+            android:id="@+id/sendButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#186099"
+            android:text="@string/send"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@id/message2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/message2" />
+
+        <TextView
+            android:id="@+id/message3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="25dp"
+            android:backgroundTint="#333333"
+            android:maxWidth="250dp"
+            android:padding="12dp"
+            android:text="@string/message3"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toStartOf="@id/sendButton3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/message2" />
+
+
+        <Button
+            android:id="@+id/sendButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#186099"
+            android:text="@string/send"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@id/message3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/message3" />
+
+        <!-- Sor 4 -->
+        <TextView
+            android:id="@+id/message4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="25dp"
+            android:backgroundTint="#333333"
+            android:maxWidth="250dp"
+            android:padding="12dp"
+            android:text="@string/message4"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toStartOf="@id/sendButton4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/message3" />
+
+
+        <Button
+            android:id="@+id/sendButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#186099"
+            android:text="@string/send"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@id/message4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/message4" />
+
+        <!-- Sor 5 -->
+        <TextView
+            android:id="@+id/message5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="25dp"
+            android:backgroundTint="#333333"
+            android:maxWidth="250dp"
+            android:padding="12dp"
+            android:text="@string/message5"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toStartOf="@id/sendButton5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/message4" />
+
+
+        <Button
+            android:id="@+id/sendButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#186099"
+            android:text="@string/send"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@id/message5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/message5" />
+
+        <!-- Sor 6 -->
+        <TextView
+            android:id="@+id/message6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="25dp"
+            android:backgroundTint="#333333"
+            android:maxWidth="250dp"
+            android:padding="12dp"
+            android:text="@string/message6"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toStartOf="@id/sendButton6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/message5" />
+
+        <Button
+            android:id="@+id/sendButton6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#186099"
+            android:text="@string/send"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@id/message6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/message6" />
+
+        <!-- Sor 7 -->
+        <TextView
+            android:id="@+id/message7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="25dp"
+            android:backgroundTint="#333333"
+            android:maxWidth="250dp"
+            android:padding="12dp"
+            android:text="@string/message7"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toStartOf="@id/sendButton7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/message6" />
+
+
+        <Button
+            android:id="@+id/sendButton7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#186099"
+            android:text="@string/send"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@id/message7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/message7" />
+
+        <!-- Sor 8 -->
+        <TextView
+            android:id="@+id/message8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="25dp"
+            android:backgroundTint="#333333"
+            android:maxWidth="250dp"
+            android:padding="12dp"
+            android:text="@string/message8"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toStartOf="@id/sendButton8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/message7" />
+
+        <Button
+            android:id="@+id/sendButton8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#186099"
+            android:text="@string/send"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@id/message8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/message8" />
+
+        <!-- Sor 9 -->
+        <TextView
+            android:id="@+id/message9"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="25dp"
+            android:backgroundTint="#333333"
+            android:maxWidth="250dp"
+            android:padding="12dp"
+            android:text="@string/message9"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toStartOf="@id/sendButton9"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/message8" />
+
+
+        <Button
+            android:id="@+id/sendButton9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#186099"
+            android:text="@string/send"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@id/message9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/message9" />
+
+        <!-- Sor 10 -->
+        <TextView
+            android:id="@+id/message10"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="25dp"
+            android:backgroundTint="#333333"
+            android:maxWidth="250dp"
+            android:padding="12dp"
+            android:text="@string/message10"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toStartOf="@id/sendButton10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/message9" />
+
+
+        <Button
+            android:id="@+id/sendButton10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#186099"
+            android:text="@string/send"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@id/message10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/message10" />
+
+        <!-- Sor 11 -->
+        <TextView
+            android:id="@+id/message11"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="25dp"
+            android:backgroundTint="#333333"
+            android:maxWidth="250dp"
+            android:padding="12dp"
+            android:text="@string/message11"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toStartOf="@id/sendButton11"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/message10" />
+
+
+        <Button
+            android:id="@+id/sendButton11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#2196F3"
+            android:text="@string/send"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@id/message11"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/message11" />
+
+        <!-- Sor 12 -->
+        <TextView
+            android:id="@+id/message12"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="25dp"
+            android:backgroundTint="#333333"
+            android:maxWidth="250dp"
+            android:padding="12dp"
+            android:text="@string/message12"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toStartOf="@id/sendButton12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/message11" />
+
+
+        <Button
+            android:id="@+id/sendButton12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#2196F3"
+            android:text="@string/send"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@id/message12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/message12" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

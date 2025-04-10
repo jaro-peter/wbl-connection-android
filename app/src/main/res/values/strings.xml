@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">WBLConnection</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="lorem_ipsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
+        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
+        dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
+        litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend
+        diam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,
+        ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\n
+        Suspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamus
+        egestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sed
+        neque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuada
+        fames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,
+        molestie nibh. Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor
+        bibendum, vel congue leo egestas.\n\n
+        Sed interdum tortor nibh, in sagittis risus mollis quis. Curabitur mi odio, condimentum sit
+        amet auctor at, mollis non turpis. Nullam pretium libero vestibulum, finibus orci vel,
+        molestie quam. Fusce blandit tincidunt nulla, quis sollicitudin libero facilisis et. Integer
+        interdum nunc ligula, et fermentum metus hendrerit id. Vestibulum lectus felis, dictum at
+        lacinia sit amet, tristique id quam. Cras eu consequat dui. Suspendisse sodales nunc ligula,
+        in lobortis sem porta sed. Integer id ultrices magna, in luctus elit. Sed a pellentesque
+        est.\n\n
+        Aenean nunc velit, lacinia sed dolor sed, ultrices viverra nulla. Etiam a venenatis nibh.
+        Morbi laoreet, tortor sed facilisis varius, nibh orci rhoncus nulla, id elementum leo dui
+        non lorem. Nam mollis ipsum quis auctor varius. Quisque elementum eu libero sed commodo. In
+        eros nisl, imperdiet vel imperdiet et, scelerisque a mauris. Pellentesque varius ex nunc,
+        quis imperdiet eros placerat ac. Duis finibus orci et est auctor tincidunt. Sed non viverra
+        ipsum. Nunc quis augue egestas, cursus lorem at, molestie sem. Morbi a consectetur ipsum, a
+        placerat diam. Etiam vulputate dignissim convallis. Integer faucibus mauris sit amet finibus
+        convallis.\n\n
+        Phasellus in aliquet mi. Pellentesque habitant morbi tristique senectus et netus et
+        malesuada fames ac turpis egestas. In volutpat arcu ut felis sagittis, in finibus massa
+        gravida. Pellentesque id tellus orci. Integer dictum, lorem sed efficitur ullamcorper,
+        libero justo consectetur ipsum, in mollis nisl ex sed nisl. Donec maximus ullamcorper
+        sodales. Praesent bibendum rhoncus tellus nec feugiat. In a ornare nulla. Donec rhoncus
+        libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
+        vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
+    </string>
+    <string name="logo" />
+    <string name="sign_in">Sign In</string>
+    <string name="license_plate">License plate</string>
+    <string name="password">Password</string>
+    <string name="sign_in_button">SIGN IN</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="new_user_sign_up_with_qr_code">New User? Sign up with QR code</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="send_message_without_logging_in">Send message without logging in</string>
+    <string name="back">Back</string>
+    <string name="registration">Registration</string>
+    <string name="registration_is_only_possible_with_a_qr_code_sticker">Registration is only possible with a QR code sticker</string>
+    <string name="go_to_qr_scanner">Go to QR Scanner</string>
+    <string name="original_wbl_stickers_do_not_redirect_to_external_sites_or_request_access">Original WBL stickers do not redirect to external sites or request access.</string>
+    <string name="ok">OK</string>
+    <string name="registration_successful">Registration successful</string>
+    <string name="used_qr_code">Used QR Code</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="email_address">email address</string>
+    <string name="send_message">send message</string>
+    <string name="camera_permission_is_required">Camera permission is required!</string>
+    <string name="qr_code_scanning_successful">QR code Scanning successful</string>
+    <string name="message12">message12</string>
+    <string name="message11">message11</string>
+    <string name="message10">message10</string>
+    <string name="message9">message9</string>
+    <string name="message8">message8</string>
+    <string name="message7">Rongálják az autódat/motorodat</string>
+    <string name="message6">Rossz helyen parkolsz</string>
+    <string name="message5">Házi kedvenc maradt az autóban</string>
+    <string name="message4">Gyermek van az autóban</string>
+    <string name="message2">Az egyik ajtó nyitva van</string>
+    <string name="message1">Nem ég a fék lámpa</string>
+    <string name="message3">Nem ég a helyzetjelző</string>
+    <string name="send">Send</string>
+    <string name="messages">messages</string>
+</resources>
