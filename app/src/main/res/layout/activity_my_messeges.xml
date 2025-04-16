@@ -34,8 +34,6 @@
         android:inputType="text"
         android:padding="12dp"
         android:textColor="#DDDDDD"
-
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -47,9 +45,8 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="50dp"
          android:textColorHint="@color/white"
-
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextMyLicensePlate" />
+        app:layout_constraintTop_toBottomOf="@id/editTextMyLicensePlate"
 
-
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

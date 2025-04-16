@@ -53,22 +53,34 @@
             app:layout_constraintTop_toBottomOf="@id/buttonBack" />
 
 
-        <EditText
-            android:id="@+id/editTextLicensePlateReceiver"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="#DDDDDD"
-            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-            android:hint="@string/license_plate"
-            android:importantForAutofill="no"
-            android:inputType="text"
-            android:padding="12dp"
-            android:textColor="#DDDDDD"
-
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textSendMessage" />
+            <EditText
+                android:id="@+id/editTextLicencePlateExist"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:hint="@string/doesn_t_exist"
+                android:enabled="false"
+                android:backgroundTint="#AA0000"
+                android:textColor="#FFFFFF"
+                app:layout_constraintTop_toTopOf="@+id/editTextLicensePlateReceiver"
+                app:layout_constraintStart_toEndOf="@+id/editTextLicensePlateReceiver"
+                app:layout_constraintEnd_toEndOf="parent"/>
+            <EditText
+                android:id="@+id/editTextLicensePlateReceiver"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#DDDDDD"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+                android:hint="@string/license_plate"
+                android:importantForAutofill="no"
+                android:padding="12dp"
+                android:textColor="#DDDDDD"
+                android:inputType="text|textCapCharacters"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textSendMessage"
+                app:layout_constraintEnd_toStartOf="@+id/editTextLicencePlateExist"
+               />
 
 
         <TextView
