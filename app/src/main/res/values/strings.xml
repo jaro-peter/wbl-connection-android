@@ -78,4 +78,8 @@
     <string name="message3">Nem ég a helyzetjelző</string>
     <string name="send">Send</string>
     <string name="messages">messages</string>
+    <string name="licence_plate_doesn_t_exist">licence plate doesn\'t exist</string>
+    <string name="doesn_t_exist">doesn\'t exist</string>
+    <string name="qr_code_information">Qr Code Information</string>
+    <string name="like">Like</string>
 </resources>

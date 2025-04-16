@@ -4,8 +4,11 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
+import android.view.MotionEvent
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -57,11 +60,12 @@ class Basic : AppCompatActivity() {
                     val objID = user.objectId
                     val licencePlate= user.username
                     savedSessionData(sessionToken,objID,licencePlate)
-                    Toast.makeText(this, "✅ Sikeres bejelentkezés", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "✅ Sikeres bejelentkezés", Toast.LENGTH_LONG).show()
                     Log.d("SessionToken", "Session ID: $sessionToken")
 
                     // You can now navigate to the next screen and pass sessionToken if needed
                     val intent = Intent(this, LoggedIn::class.java)
+
                     intent.putExtra("sessionToken", sessionToken)
                     intent.putExtra("objID",objID)
                     intent.putExtra("licencePlate", licencePlate)
@@ -91,6 +95,22 @@ class Basic : AppCompatActivity() {
             }
 
         }*/
+        val forgetEmail = findViewById<TextView>(R.id.forgotPassword)
+        forgetEmail.setOnClickListener(){
+            val intent = Intent(this, ForgetPassword::class.java)
+            startActivity(intent)
+
+        }
+
+
+    }
+    override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
+        if (currentFocus != null) {
+            val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
+            currentFocus!!.clearFocus()
+        }
+        return super.dispatchTouchEvent(ev)
     }
     fun savedSessionData(savingToken: String,objectId:String, licencePlate:String) {
         val prefs : SharedPreferences = getSharedPreferences ("my_app_prefs",MODE_PRIVATE );
