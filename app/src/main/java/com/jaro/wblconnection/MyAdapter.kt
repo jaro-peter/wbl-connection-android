@@ -1,5 +1,6 @@
 package com.jaro.wblconnection
 
+import android.app.AlertDialog
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -34,49 +35,57 @@ class MyAdapter(private val items: MutableList<MessageView>) : RecyclerView.Adap
         holder.licensePlate.text = item.message
         holder.createdAt.text = item.date
 
-        val liked = parseMessage.getBoolean("Rating")
+        val liked = parseMessage.getBoolean("rating")
         holder.likeButton.setBackgroundResource(
             if (liked) R.drawable.like else R.drawable.like_off
         )
 
         holder.likeButton.setOnClickListener {
-            val newLiked = !parseMessage.getBoolean("Rating")
-            parseMessage.put("Rating", newLiked)
+            val newLiked = !parseMessage.getBoolean("rating")
+            parseMessage.put("rating", newLiked)
             parseMessage.saveInBackground()
 
             holder.likeButton.setBackgroundResource(
                 if (newLiked) R.drawable.like else R.drawable.like_off
             )
 
-            // User értékelés frissítése
-            val query = ParseUser.getQuery()
-            query.whereEqualTo("username", item.username)
-            Log.d("username", item.username)
-            query.getFirstInBackground { user, e ->
-                if (user != null) {
-                    Log.e("user", user.toString() )
-                }
-                if (e != null) {
-                    Log.e("error",e.toString())
+            // Küldés szerveroldali Cloud Functionnek
+            val delta = if (newLiked) 1 else -1
 
-                }
-                if (e == null && user != null) {
-                    val currentRating = user.getInt("rating")
-                    val updatedRating = if (!newLiked) currentRating + 1 else currentRating - 1
-                    user.put("rating", updatedRating)
-                    user.saveInBackground{e ->
-                        if (e == null) {
-                            Log.d("rating", "Sikeres mentés: ${user.getInt("rating")}")
-                        } else {
-                            Log.e("rating", "Mentés sikertelen: ${e.localizedMessage}")
-                        }
-                        Log.e("rating",user.getString("username").toString())
-                        Log.e("rating", user.getInt("rating").toString())
-                    }
+            val params = hashMapOf(
+                "userId" to item.parseObject.getString("From"),
+                "delta" to delta
+            )
 
+            com.parse.ParseCloud.callFunctionInBackground<String>("updateUserRating", params) { response, e ->
+                if (e == null) {
+                    Log.d("rating", "✅ Sikeres mentés szerveren: $response")
+                } else {
+                    Log.e("rating", "❌ Hiba a szerveren: ${e.localizedMessage}")
                 }
             }
         }
+        holder.binButton.setOnClickListener {
+            AlertDialog.Builder(holder.itemView.context)
+                .setTitle("Törlés")
+                .setMessage("Biztosan törölni szeretnéd ezt az üzenetet? Az üzenet törlésével, a 'like és dislike többé nem változtatható")
+                .setPositiveButton("Igen") { _, _ ->
+                    item.parseObject.deleteInBackground { e ->
+                        if (e == null) {
+                            items.removeAt(position)
+                            notifyItemRemoved(position)
+                            notifyItemRangeChanged(position, items.size)
+                        } else {
+                            Log.e("Delete", "❌ Nem sikerült törölni: ${e.localizedMessage}")
+                        }
+                    }
+                }
+                .setNegativeButton("Mégse", null)
+                .show()
+        }
+
+
+
     }
 
 

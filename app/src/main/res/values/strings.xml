@@ -82,4 +82,9 @@
     <string name="doesn_t_exist">doesn\'t exist</string>
     <string name="qr_code_information">Qr Code Information</string>
     <string name="like">Like</string>
+    <string name="abc123">ABC123</string>
+    <string name="user_settings">User Settings</string>
+    <string name="message_volume">Message volume</string>
+    <string name="my_rating">My rating</string>
+    <string name="number">Number</string>
 </resources>

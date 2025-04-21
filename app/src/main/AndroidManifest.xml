@@ -18,6 +18,9 @@
         android:theme="@style/Theme.WBLConnection"
         tools:targetApi="31">
         <activity
+            android:name=".UserSettings"
+            android:exported="false" />
+        <activity
             android:name=".ForgetPassword"
             android:exported="false" />
         <activity

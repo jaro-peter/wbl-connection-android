@@ -1,8 +1,10 @@
 package com.jaro.wblconnection
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -12,7 +14,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.parse.ParseObject
+import com.parse.ParseQuery
 import com.parse.ParseUser
+import java.util.*
+import kotlin.concurrent.fixedRateTimer
+
+
 
 
 class LoggedIn : AppCompatActivity() {
@@ -20,6 +28,10 @@ class LoggedIn : AppCompatActivity() {
         fun onSuccess(user: ParseUser)
         fun onError(errorMessage: String)
     }
+    private var messageTimer: Timer? = null
+
+
+
 
     @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,6 +54,11 @@ class LoggedIn : AppCompatActivity() {
             insets
         }
 
+        val licencePlate = intent.getStringExtra("licencePlate") ?: return
+        messageTimer = fixedRateTimer("messageChecker", true, 0L, 10000L) {
+            checkForNewMessages(licencePlate)
+        }
+
         sendMessageButton.setOnClickListener {
 
 
@@ -55,12 +72,15 @@ class LoggedIn : AppCompatActivity() {
 
 
         settingsButton.setOnClickListener {
-            val licensePlate =  intent.getStringExtra("licencePlate")+""
+            val licensePlate = intent.getStringExtra("licencePlate") ?: return@setOnClickListener
 
             getUserByUsername(licensePlate, object : UserQueryCallback {
                 override fun onSuccess(user: ParseUser) {
-                    Log.d("Parse", "objectId: ${user.objectId}")
-                    Log.d("Parse", "username: ${user.username}")
+                    val intent = Intent(this@LoggedIn, UserSettings::class.java)
+                    intent.putExtra("licencePlate", user.username)
+                    intent.putExtra("objID", user.objectId)
+                    intent.putExtra("sessionToken", user.sessionToken)
+                    startActivity(intent)
                 }
 
                 override fun onError(errorMessage: String) {
@@ -68,6 +88,7 @@ class LoggedIn : AppCompatActivity() {
                 }
             })
         }
+
 
         logoutButton.setOnClickListener {
             val intent = Intent(this, Basic::class.java)
@@ -91,8 +112,45 @@ class LoggedIn : AppCompatActivity() {
 
         }
     }
+    override fun onDestroy() {
+        super.onDestroy()
+        messageTimer?.cancel()
+        messageTimer = null
+    }
 
-    // 👇 Ez legyen kívül az onCreate-ből!
+
+    fun checkForNewMessages(licencePlate: String) {
+        val query = ParseQuery.getQuery<ParseObject>("Messages")
+        query.whereEqualTo("To", licencePlate)
+        query.orderByDescending("createdAt")
+        query.setLimit(1)
+
+        query.findInBackground { messages, e ->
+            if (e == null && messages.isNotEmpty()) {
+                val latestMessage = messages.first()
+                val seen = latestMessage.getBoolean("Seen")
+
+                if (!seen) {
+                    latestMessage.put("Seen", true)
+                    latestMessage.saveInBackground()
+
+                    val prefs = getSharedPreferences("my_app_prefs", MODE_PRIVATE)
+                    val notificationsEnabled = prefs.getBoolean("notifications_enabled", true)
+                    if (notificationsEnabled) {
+                        runOnUiThread {
+                            playNotificationSound(this)
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    fun playNotificationSound(context: Context) {
+        val mediaPlayer = MediaPlayer.create(context, R.raw.notification_beep2)
+        mediaPlayer.start()
+    }
 
 
     fun getUserByUsername(licencePlateField: String, callback: UserQueryCallback) {

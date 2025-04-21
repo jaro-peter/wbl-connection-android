@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    tools:context=".UserSettings">
+
+    <!-- Vissza gomb -->
+    <Button
+        android:id="@+id/button_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="#1E88E5"
+        android:elevation="6dp"
+        android:padding="12dp"
+        android:text="@string/back"
+        android:textColor="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="32dp"
+        android:contentDescription="@string/logo"
+        android:src="@drawable/logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Cím -->
+    <TextView
+        android:id="@+id/editTextUserSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/user_settings"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/imgLogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Rendszám mező -->
+    <TextView
+        android:id="@+id/editTextUserLicencePlate"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="#C3ABAB"
+        android:textColor="#000000"
+        android:padding="12dp"
+        android:text="@string/abc123"
+        app:layout_constraintTop_toBottomOf="@id/editTextUserSettings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Üzenet értesítés + kapcsoló -->
+    <TextView
+        android:id="@+id/textMessageVolume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/message_volume"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/editTextUserLicencePlate"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="24dp" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchVolume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="#C3ABAB"
+        android:minWidth="70dp"
+        android:minHeight="48dp"
+        app:layout_constraintTop_toTopOf="@id/textMessageVolume"
+        app:layout_constraintBottom_toBottomOf="@id/textMessageVolume"
+        app:layout_constraintStart_toEndOf="@id/textMessageVolume" />
+
+
+    <!-- Értékelés -->
+    <TextView
+        android:id="@+id/editTextMyRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/my_rating"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/textMessageVolume"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="24dp" />
+
+    <TextView
+        android:id="@+id/editTextUserRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/number"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="@id/editTextMyRating"
+        app:layout_constraintBottom_toBottomOf="@id/editTextMyRating"
+        app:layout_constraintStart_toEndOf="@id/editTextMyRating"
+        android:layout_marginStart="16dp" />
+
+    <!-- OK gomb -->
+    <Button
+        android:id="@+id/btnConfirm"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:backgroundTint="#1E88E5"
+        android:padding="12dp"
+        android:text="@string/ok"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/editTextMyRating"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
