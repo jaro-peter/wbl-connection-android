@@ -16,7 +16,7 @@ object MessageWatcher {
     private lateinit var context: Context
 
     private val handler = Handler(Looper.getMainLooper())
-    private val intervalMillis = 3000L // 30 másodperc
+    private val intervalMillis = 3000L // 3 másodperc
 
     fun startWatching(context: Context, licencePlate: String) {
         if (isRunning) return
