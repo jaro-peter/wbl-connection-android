@@ -161,7 +161,7 @@ class LoggedIn : AppCompatActivity() {
             if (e == null && user != null) {
                 callback.onSuccess(user)
             } else {
-                callback.onError(e?.message ?: "Ismeretlen hiba")
+                callback.onError(e?.message ?: getString(R.string.unknown_error))
             }
         }
     }

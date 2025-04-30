@@ -16,7 +16,7 @@ object MessageWatcher {
     private lateinit var context: Context
 
     private val handler = Handler(Looper.getMainLooper())
-    private val intervalMillis = 3000L // 3 másodperc
+    private val intervalMillis = 30000L // 30 másodperc
 
     fun startWatching(context: Context, licencePlate: String) {
         if (isRunning) return
@@ -39,7 +39,7 @@ object MessageWatcher {
 
             query.findInBackground { messages, e ->
                 if (e == null && messages.isNotEmpty()) {
-                    Log.d("MessageWatcher", "\uD83D\uDEA8 Új üzenet érkezett!")
+                    Log.d("MessageWatcher", "\uD83D\uDEA8 New message received!")
                     playBeep()
                     lastCheckedAt = System.currentTimeMillis()
                 }
@@ -54,7 +54,7 @@ object MessageWatcher {
             val mp = MediaPlayer.create(context, R.raw.notification_beep2)
             mp.start()
         } catch (e: Exception) {
-            Log.e("MessageWatcher", "Hiba lejátszáskor: ${e.localizedMessage}")
+            Log.e("MessageWatcher", "Error during playback: ${e.localizedMessage}")
         }
     }
 

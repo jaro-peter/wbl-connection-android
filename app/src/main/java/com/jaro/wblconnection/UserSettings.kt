@@ -42,7 +42,7 @@ class UserSettings : AppCompatActivity() {
                 val rating = user.getInt("rating")
                 ratingText.text = rating.toString()
             } else {
-                Log.e("UserSettings", "Hiba a felhasználó lekérésekor: ${e?.message}")
+                Log.e("UserSettings", "Error retrieving user: ${e?.message}")
                 ratingText.text = "0"
             }
         }

@@ -52,7 +52,7 @@ class Registration_with_QR_code : AppCompatActivity() {
             } else {
                 Toast.makeText(
                     this,
-                    "A kameraengedély szükséges a QR-kód beolvasásához",
+                    getString(R.string.camera_permission_is_required_to_scan_the_qr_code),
                     Toast.LENGTH_LONG
                 ).show()
             }
@@ -65,7 +65,7 @@ class Registration_with_QR_code : AppCompatActivity() {
 
         previewView = findViewById(R.id.previewView)
         qrCodeInformation = findViewById(R.id.TextViewQrCodeInformation)
-        qrCodeInformation.text = "Kód nem látható"
+        qrCodeInformation.text = getString(R.string.code_not_visible)
         signUpButton = findViewById(R.id.buttonSignUp)
 
         cameraExecutor = Executors.newSingleThreadExecutor()
@@ -75,9 +75,9 @@ class Registration_with_QR_code : AppCompatActivity() {
         discardQrButton.setOnClickListener {
             qrCodeFinal = "" // töröljük a QR-kód értékét
 
-            qrCodeInformation.text = "Kód eldobva, olvass be újat"
+            qrCodeInformation.text = getString(R.string.code_discarded_please_scan_a_new_one)
             qrCodeInformation.setTextColor(ContextCompat.getColor(this, R.color.yellow))
-            Toast.makeText(this, "Kód eldobva, olvass be újatt", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, getString(R.string.code_discarded_please_scan_a_new_one), Toast.LENGTH_LONG).show()
         }
 
 
@@ -104,13 +104,13 @@ class Registration_with_QR_code : AppCompatActivity() {
 
     private fun checkQrAndSaveUser() {
         if (!::qrCodeFinal.isInitialized || qrCodeFinal.isEmpty()) {
-            Toast.makeText(this, "kérlek előbb olvass be Qr kódot", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, getString(R.string.invalid_qr_code_format), Toast.LENGTH_LONG).show()
             return
         }
 
         val parts = qrCodeFinal.split(":")
         if (parts.size < 2) {
-            qrCodeInformation.text = "⚠️ Hibás QR-kód formátum"
+            qrCodeInformation.text = getString(R.string.invalid_qr_code_format)
             return
         }
 
@@ -120,13 +120,13 @@ class Registration_with_QR_code : AppCompatActivity() {
         query.getInBackground(objectId) { obj, e ->
             if (e == null && obj != null) {
                 if (obj.get("Used") == false) {
-                    qrCodeInformation.text = "Ez a QR-kód szabad"
+                    qrCodeInformation.text = getString(R.string.this_qr_code_is_available)
                     saveUser(obj)
                 } else {
-                    qrCodeInformation.text = "Ez a QR-kód már felhasználva"
+                    qrCodeInformation.text = getString(R.string.this_qr_code_are_used)
                 }
             } else {
-                qrCodeInformation.text = "Ismeretlen hiba"
+                qrCodeInformation.text = getString(R.string.unknown_error)
             }
         }
     }
@@ -149,12 +149,12 @@ class Registration_with_QR_code : AppCompatActivity() {
 
 
         if (username.isEmpty() || password.isEmpty() || confirmPassword.isEmpty() || emailAddress.isEmpty()) {
-            Toast.makeText(this, "Minden mező kitöltése kötelező", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, getString(R.string.all_fields_are_required), Toast.LENGTH_LONG).show()
             return
         }
 
         if (password != confirmPassword) {
-            Toast.makeText(this, "A jelszavak nem egyeznek", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, getString(R.string.passwords_do_not_match), Toast.LENGTH_LONG).show()
             return
         }
 
@@ -174,11 +174,14 @@ class Registration_with_QR_code : AppCompatActivity() {
                 obj.put("Used", true)
                 obj.put("UserId", user.objectId)
                 obj.save()
-                Toast.makeText(this, "✅ Sikeres regisztráció", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.successful_registration), Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, RegistrationSuccessful::class.java)
+                intent.putExtra("licence plate", user.username)
+                intent.putExtra("email address", user.email)
                 startActivity(intent)
             } else {
-                Toast.makeText(this, "❌ Hiba: ${e.localizedMessage}", Toast.LENGTH_LONG).show()
+                Toast.makeText(this,
+                    getString(R.string.error, e.localizedMessage), Toast.LENGTH_LONG).show()
             }
         }
 
@@ -247,7 +250,7 @@ class Registration_with_QR_code : AppCompatActivity() {
                         }
                     } else {
                         if (!qrCodeDetected) {
-                            qrCodeInformation.text = "Kód nem látható"
+                            qrCodeInformation.text = getString(R.string.code_not_visible)
                             qrCodeInformation.setTextColor(ContextCompat.getColor(this, R.color.yellow))
                         }
                         // különben NE írja felül az infót, ha már van beolvasott kód
@@ -271,22 +274,22 @@ class Registration_with_QR_code : AppCompatActivity() {
         val objectId = code.split(":").getOrNull(1)
 
         if (objectId == null) {
-            qrCodeInformation.text = "Ismeretlen QR-kód"
+            qrCodeInformation.text = getString(R.string.unknown_qr_code)
             return
         }
 
         query.getInBackground(objectId) { obj, e ->
             when {
                 e != null || obj == null -> {
-                    qrCodeInformation.text = "Ismeretlen QR-kód"
+                    qrCodeInformation.text = getString(R.string.unknown_qr_code)
                     qrCodeInformation.setTextColor(ContextCompat.getColor(this, R.color.yellow))
                 }
                 obj.getBoolean("Used") -> {
-                    qrCodeInformation.text = "QR-kód már felhasználva"
+                    qrCodeInformation.text = getString(R.string.qr_code_already_used)
                     qrCodeInformation.setTextColor(ContextCompat.getColor(this, R.color.red))
                 }
                 else -> {
-                    qrCodeInformation.text = "QR-kód szabad"
+                    qrCodeInformation.text = getString(R.string.qr_code_available)
                     qrCodeInformation.setTextColor(ContextCompat.getColor(this, R.color.green))
                 }
             }

@@ -95,7 +95,7 @@ class SendMessageLicencePlate : AppCompatActivity() {
                     query.getFirstInBackground { user, e ->
                         if (e == null && user != null && user.username.equals(plate)) {
                             Log.d("PlateDebug", "✅ Sikeres lekérdezés - Hozzáférés engedélyezve a felhasználóhoz: ${user.username}")
-                            existenceText.text = "✅ exist"
+                            existenceText.text = getString(R.string.exist)
                             existenceText.setTextColor(ContextCompat.getColor(this@SendMessageLicencePlate, R.color.green))
                         } else if(e == null && user != null && user.username.startsWith(plate))  {
                             if (e != null) {
@@ -104,11 +104,11 @@ class SendMessageLicencePlate : AppCompatActivity() {
                                 Log.w("PlateDebug", "⚠️ Nincs találat, vagy nincs hozzáférés (user == null)")
                             }
 
-                            existenceText.text = "⚠\uFE0F  keep writting"
+                            existenceText.text = getString(R.string.keep_writting)
                             existenceText.setTextColor(ContextCompat.getColor(this@SendMessageLicencePlate, R.color.yellow))
 
                         }else {
-                            existenceText.text = "❌ doesn't exist"
+                            existenceText.text = getString(R.string.doesn_t_exist2)
                             existenceText.setTextColor(ContextCompat.getColor(this@SendMessageLicencePlate, R.color.red))
 
                             Log.w("PlateDebug","Nincs egyezés")
@@ -169,86 +169,88 @@ class SendMessageLicencePlate : AppCompatActivity() {
         sendButton1.setOnClickListener(){
             if (existenceText.text.toString().contains("✅")) {
            sendMessage(messageText1.text.toString())
-                Toast.makeText(this, "Message successfully sent to ${toLicencePlate.text}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,
+                    getString(R.string.message_successfully_sent_to, toLicencePlate.text), Toast.LENGTH_SHORT).show()
              } else {
-                Toast.makeText(this, "❗ Messages can only be sent to existing license plates.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,
+                    getString(R.string.messages_can_only_be_sent_to_existing_license_plates), Toast.LENGTH_SHORT).show()
             }
         }
         sendButton2.setOnClickListener(){
             if (existenceText.text.toString().contains("✅")) {
                 sendMessage(messageText2.text.toString())
             } else {
-                Toast.makeText(this, "❗ Messages can only be sent to existing license plates.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.messages_can_only_be_sent_to_existing_license_plates), Toast.LENGTH_SHORT).show()
             }
         }
         sendButton3.setOnClickListener(){
             if (existenceText.text.toString().contains("✅")) {
                 sendMessage(messageText3.text.toString())
             } else {
-                Toast.makeText(this, "❗ Messages can only be sent to existing license plates.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.messages_can_only_be_sent_to_existing_license_plates), Toast.LENGTH_SHORT).show()
             }
         }
         sendButton4.setOnClickListener(){
             if (existenceText.text.toString().contains("✅")) {
                 sendMessage(messageText4.text.toString())
             } else {
-                Toast.makeText(this, "❗ Messages can only be sent to existing license plates.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.messages_can_only_be_sent_to_existing_license_plates), Toast.LENGTH_SHORT).show()
             }
         }
         sendButton5.setOnClickListener(){
             if (existenceText.text.toString().contains("✅")) {
                 sendMessage(messageText5.text.toString())
             } else {
-                Toast.makeText(this, "❗ Messages can only be sent to existing license plates.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.messages_can_only_be_sent_to_existing_license_plates), Toast.LENGTH_SHORT).show()
             }
         }
         sendButton6.setOnClickListener(){
             if (existenceText.text.toString().contains("✅")) {
                 sendMessage(messageText6.text.toString())
             } else {
-                Toast.makeText(this, "❗ Messages can only be sent to existing license plates.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.messages_can_only_be_sent_to_existing_license_plates), Toast.LENGTH_SHORT).show()
             }
         }
         sendButton7.setOnClickListener(){
             if (existenceText.text.toString().contains("✅")) {
                 sendMessage(messageText7.text.toString())
             } else {
-                Toast.makeText(this, "❗ Messages can only be sent to existing license plates.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.messages_can_only_be_sent_to_existing_license_plates), Toast.LENGTH_SHORT).show()
             }
         }
         sendButton8.setOnClickListener(){
             if (existenceText.text.toString().contains("✅")) {
                 sendMessage(messageText8.text.toString())
             } else {
-                Toast.makeText(this, "❗ Messages can only be sent to existing license plates.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.messages_can_only_be_sent_to_existing_license_plates), Toast.LENGTH_SHORT).show()
             }
         }
         sendButton9.setOnClickListener(){
             if (existenceText.text.toString().contains("✅")) {
                 sendMessage(messageText9.text.toString())
             } else {
-                Toast.makeText(this, "❗ Messages can only be sent to existing license plates.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.messages_can_only_be_sent_to_existing_license_plates), Toast.LENGTH_SHORT).show()
             }
         }
         sendButton10.setOnClickListener(){
             if (existenceText.text.toString().contains("✅")) {
                 sendMessage(messageText10.text.toString())
             } else {
-                Toast.makeText(this, "❗ Messages can only be sent to existing license plates.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.messages_can_only_be_sent_to_existing_license_plates), Toast.LENGTH_SHORT).show()
             }
         }
         sendButton11.setOnClickListener(){
             if (existenceText.text.toString().contains("✅")) {
                 sendMessage(messageText11.text.toString())
             } else {
-                Toast.makeText(this, "❗ Messages can only be sent to existing license plates.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.messages_can_only_be_sent_to_existing_license_plates), Toast.LENGTH_SHORT).show()
             }
         }
         sendButton12.setOnClickListener(){
             if (existenceText.text.toString().contains("✅")) {
                 sendMessage(messageText12.text.toString())
             } else {
-                Toast.makeText(this, "❗ Messages can only be sent to existing license plates.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.messages_can_only_be_sent_to_existing_license_plates), Toast.LENGTH_SHORT).show()
             }
         }
 

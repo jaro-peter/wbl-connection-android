@@ -12,6 +12,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.jaro.wblconnection.R.string
 import com.parse.ParseObject
 import com.parse.ParseUser
 
@@ -60,7 +61,7 @@ class Basic : AppCompatActivity() {
                     val objID = user.objectId
                     val licencePlate= user.username
                     savedSessionData(sessionToken,objID,licencePlate)
-                    Toast.makeText(this, "✅ Sikeres bejelentkezés", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, getString(string.successful_login), Toast.LENGTH_LONG).show()
                     Log.d("SessionToken", "Session ID: $sessionToken")
 
                     // You can now navigate to the next screen and pass sessionToken if needed
@@ -71,7 +72,8 @@ class Basic : AppCompatActivity() {
                     intent.putExtra("licencePlate", licencePlate)
                     startActivity(intent)
                 } else {
-                    Toast.makeText(this, "Valamiért sikertelen volt a bejelentkezés", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this,
+                        getString(string.successful), Toast.LENGTH_LONG).show()
                 }
             }
 
@@ -80,21 +82,7 @@ class Basic : AppCompatActivity() {
 
 
         }
-      /*  val signInButton = findViewById<Button>(R.id.signInButton)
-        signInButton.setOnClickListener{
-            val obj = ParseObject("Messages")
-            obj.put("From", "AndroidApp") // nagybetűs!
-            obj.put("To", "UserXYZ")
-            obj.put("Message", "Minden király: ${System.currentTimeMillis()}")
-            obj.saveInBackground { e ->
-                if (e == null) {
-                    Log.d("ParseDebug", "✅ Sikeresen mentve")
-                } else {
-                    Log.e("ParseDebug", "❌ Hiba: ${e.localizedMessage}")
-                }
-            }
 
-        }*/
         val forgetEmail = findViewById<TextView>(R.id.forgotPassword)
         forgetEmail.setOnClickListener(){
             val intent = Intent(this, ForgetPassword::class.java)

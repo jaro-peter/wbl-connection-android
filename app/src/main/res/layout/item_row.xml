@@ -13,7 +13,7 @@
         android:id="@+id/createdAtTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Created At"
+        android:text="@string/created_at"
         android:textColor="@color/white"
         android:textSize="14sp" />
 
@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:text="License Plate"
+        android:text="@string/license_plate"
         android:textSize="16sp"/>
 
     <ImageButton

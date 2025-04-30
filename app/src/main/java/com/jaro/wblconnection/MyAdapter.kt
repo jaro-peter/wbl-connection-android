@@ -67,20 +67,20 @@ class MyAdapter(private val items: MutableList<MessageView>) : RecyclerView.Adap
         }
         holder.binButton.setOnClickListener {
             AlertDialog.Builder(holder.itemView.context)
-                .setTitle("Törlés")
-                .setMessage("Biztosan törölni szeretnéd ezt az üzenetet? Az üzenet törlésével, a 'like és dislike többé nem változtatható")
-                .setPositiveButton("Igen") { _, _ ->
+                .setTitle("Delete")
+                .setMessage("Are you sure you want to delete this message? Once deleted, likes and dislikes can no longer be changed ")
+                .setPositiveButton("Yes") { _, _ ->
                     item.parseObject.deleteInBackground { e ->
                         if (e == null) {
                             items.removeAt(position)
                             notifyItemRemoved(position)
                             notifyItemRangeChanged(position, items.size)
                         } else {
-                            Log.e("Delete", "❌ Nem sikerült törölni: ${e.localizedMessage}")
+                            Log.e("Delete", "❌ Failed to delete: ${e.localizedMessage}")
                         }
                     }
                 }
-                .setNegativeButton("Mégse", null)
+                .setNegativeButton("Cancel", null)
                 .show()
         }
 

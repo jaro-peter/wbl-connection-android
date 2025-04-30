@@ -31,16 +31,19 @@ class ForgetPassword : AppCompatActivity() {
 
         button.setOnClickListener(){
             if (emailAddress.text.isEmpty()){
-                Toast.makeText(this, "The email field is empty", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,
+                    getString(R.string.email_field_is_empty), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             ParseUser.requestPasswordResetInBackground(emailAddress.text.toString()) { e->
                 if (e == null) {
-                    Toast.makeText(this, "Password reset email sent successfully.", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this,
+                        getString(R.string.password_update_successful), Toast.LENGTH_LONG).show()
                     val intent = Intent(this, Basic::class.java)
                     startActivity(intent)
                 } else {
-                    Toast.makeText(this, "This email does not exist.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this,
+                        getString(R.string.email_doesn_t_exist), Toast.LENGTH_SHORT).show()
                 }
             }
 

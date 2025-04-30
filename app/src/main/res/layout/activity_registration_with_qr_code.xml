@@ -63,7 +63,7 @@
         android:id="@+id/buttonDiscardQr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fold Qr code"
+        android:text="@string/fold_qr_code"
         android:layout_marginTop="12dp"
         app:layout_constraintTop_toBottomOf="@id/TextViewQrCodeInformation"
         app:layout_constraintStart_toStartOf="@id/TextViewQrCodeInformation"
