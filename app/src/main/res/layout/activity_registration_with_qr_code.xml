@@ -93,6 +93,7 @@
             android:background="#555555"
             android:hint="@string/license_plate"
             android:inputType="textPassword|textVisiblePassword"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
             android:maxLength="8"
             android:maxLines="1"
             android:padding="16dp"

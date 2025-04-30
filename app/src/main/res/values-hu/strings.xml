@@ -1,0 +1,134 @@
+<resources>
+    <string name="app_name">WBLConnection</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Első töredék</string>
+    <string name="second_fragment_label">Második töredék</string>
+    <string name="next">Következő</string>
+    <string name="previous">Előző</string>
+
+    <string name="lorem_ipsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
+        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
+        dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
+        litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend
+        diam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,
+        ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\n
+        Suspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamus
+        egestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sed
+        neque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuada
+        fames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,
+        molestie nibh. Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor
+        bibendum, vel congue leo egestas.\n\n
+        Sed interdum tortor nibh, in sagittis risus mollis quis. Curabitur mi odio, condimentum sit
+        amet auctor at, mollis non turpis. Nullam pretium libero vestibulum, finibus orci vel,
+        molestie quam. Fusce blandit tincidunt nulla, quis sollicitudin libero facilisis et. Integer
+        interdum nunc ligula, et fermentum metus hendrerit id. Vestibulum lectus felis, dictum at
+        lacinia sit amet, tristique id quam. Cras eu consequat dui. Suspendisse sodales nunc ligula,
+        in lobortis sem porta sed. Integer id ultrices magna, in luctus elit. Sed a pellentesque
+        est.\n\n
+        Aenean nunc velit, lacinia sed dolor sed, ultrices viverra nulla. Etiam a venenatis nibh.
+        Morbi laoreet, tortor sed facilisis varius, nibh orci rhoncus nulla, id elementum leo dui
+        non lorem. Nam mollis ipsum quis auctor varius. Quisque elementum eu libero sed commodo. In
+        eros nisl, imperdiet vel imperdiet et, scelerisque a mauris. Pellentesque varius ex nunc,
+        quis imperdiet eros placerat ac. Duis finibus orci et est auctor tincidunt. Sed non viverra
+        ipsum. Nunc quis augue egestas, cursus lorem at, molestie sem. Morbi a consectetur ipsum, a
+        placerat diam. Etiam vulputate dignissim convallis. Integer faucibus mauris sit amet finibus
+        convallis.\n\n
+        Phasellus in aliquet mi. Pellentesque habitant morbi tristique senectus et netus et
+        malesuada fames ac turpis egestas. In volutpat arcu ut felis sagittis, in finibus massa
+        gravida. Pellentesque id tellus orci. Integer dictum, lorem sed efficitur ullamcorper,
+        libero justo consectetur ipsum, in mollis nisl ex sed nisl. Donec maximus ullamcorper
+        sodales. Praesent bibendum rhoncus tellus nec feugiat. In a ornare nulla. Donec rhoncus
+        libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
+        vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
+    </string>
+    <string name="logo">Logó</string>
+    <string name="sign_in">Bejelentkezés</string>
+    <string name="license_plate">Rendszám</string>
+    <string name="password">Jelszó</string>
+    <string name="sign_in_button">BEJELENTKEZÉS</string>
+    <string name="forgot_password">Elfelejtett jelszó?</string>
+    <string name="new_user_sign_up_with_qr_code">Új felhasználó? Regisztráljon QR-kóddal</string>
+    <string name="sign_up">REGISZTRÁCIÓ</string>
+    <string name="send_message_without_logging_in">Üzenet küldése bejelentkezés nélkül</string>
+    <string name="back">Vissza</string>
+    <string name="registration">Regisztráció</string>
+    <string name="registration_is_only_possible_with_a_qr_code_sticker">A regisztráció csak QR-kód matricával lehetséges</string>
+    <string name="go_to_qr_scanner">Ugrás a QR-szkennerhez</string>
+    <string name="original_wbl_stickers_do_not_redirect_to_external_sites_or_request_access">Az eredeti WBL matricák nem irányítanak át külső webhelyekre, és nem kérnek hozzáférést.</string>
+    <string name="ok">OK</string>
+    <string name="registration_successful">Regisztráció sikeres</string>
+    <string name="used_qr_code">Használt QR Code</string>
+    <string name="confirm_password">Erősítse meg a jelszót</string>
+    <string name="email_address">email cím</string>
+    <string name="send_message">küldjön üzenetet</string>
+    <string name="camera_permission_is_required">Kameraengedély kell!</string>
+    <string name="qr_code_scanning_successful">QR-kód beolvasása sikeres</string>
+    <string name="message12">elfelejtette bekapcsolni a fényszórókat</string>
+    <string name="message11">A bal oldali féklámpa nem világít</string>
+    <string name="message10">A jobb oldali helyzetjelző nem világít</string>
+    <string name="message9">A fényszórói nincsenek bekapcsolva</string>
+    <string name="message8">Szia, hogy vagy?</string>
+    <string name="message7">Az autóját/motorkerékpárját éppen rongálják</string>
+    <string name="message6">Lehúzva maradt az ablak</string>
+    <string name="message5">Háziállat maradt az autóban</string>
+    <string name="message4">Gyerek van az autóban</string>
+    <string name="message2">Az egyik ajtó nyitva van</string>
+    <string name="message1">A jobb oldali féklámpa nem világít</string>
+    <string name="message3">A bal oldali helyzetjelző nem világít</string>
+    <string name="send">Küldés</string>
+    <string name="messages">üzenetek</string>
+    <string name="licence_plate_doesn_t_exist">a rendszám nem létezik</string>
+    <string name="doesn_t_exist">nem létezik</string>
+    <string name="qr_code_information">QR kód információ</string>
+    <string name="like">Tetszik</string>
+    <string name="abc123">ABC123</string>
+    <string name="user_settings">Felhasználói beállítások</string>
+    <string name="message_volume">Üzenetek hangja</string>
+    <string name="my_rating">Értékelésem</string>
+    <string name="number">Szám</string>
+    <string name="welcome">Üdvözöljük</string>
+    <string name="aaa123">AAA123</string>
+    <string name="send_message2">Üzenet küldése</string>
+    <string name="my_messages">Üzeneteim</string>
+    <string name="settings">Beállítások</string>
+    <string name="log_out">Kijelentkezés</string>
+    <string name="change_password">jelszó módosítása</string>
+    <string name="forget_password">Elfelejtett jelszó</string>
+    <string name="sended_to_licence_plate">rendszámra küldve</string>
+    <string name="this_message">ez az üzenet</string>
+    <string name="fold_qr_code">Qr kód behajtása</string>
+    <string name="send_message_successful">Üzenet küldése sikeres</string>
+    <string name="created_at">Létrehozva itt:</string>
+    <string name="example">példa</string>
+    <string name="success_login">Sikeres bejelentkezés</string>
+    <string name="login_failed_for_some_reason">A bejelentkezés valamilyen okból sikertelen volt.</string>
+    <string name="this_email_does_not_exist">Ez az e-mail cím nem létezik.</string>
+    <string name="password_reset_email_sent_successfully">A jelszó-visszaállítási e-mail sikeresen elküldve.</string>
+    <string name="the_email_field_is_empty">Az e-mail mező üres.</string>
+    <string name="unknown_error">Ismeretlen hiba</string>
+    <string name="successful_login">sikeres bejelentkezés</string>
+    <string name="successful">sikeres</string>
+    <string name="email_field_is_empty">e-mail mező üres</string>
+    <string name="password_update_successful">jelszófrissítés sikeres</string>
+    <string name="email_doesn_t_exist">e-mail cím nem létezik</string>
+    <string name="camera_permission_is_required_to_scan_the_qr_code">Kameraengedély szükséges a QR-kód beolvasásához</string>
+    <string name="code_not_visible">A kód nem látható</string>
+    <string name="code_discarded_please_scan_a_new_one">A kód edobva, kérjük, olvasson be egy újat</string>
+    <string name="invalid_qr_code_format">Érvénytelen QR-kód formátum</string>
+    <string name="this_qr_code_is_available">Ez a QR-kód elérhető</string>
+    <string name="this_qr_code_are_used">Ez a QR-kód már használatban van</string>
+    <string name="all_fields_are_required">Minden mező kitöltése kötelező</string>
+    <string name="passwords_do_not_match">A jelszavak nem egyeznek</string>
+    <string name="successful_registration">✅ Sikeres regisztráció</string>
+    <string name="error">❌ Hiba: %1$s</string>
+    <string name="unknown_qr_code">Ismeretlen QR-kód</string>
+    <string name="qr_code_already_used">A QR-kód már használatban van</string>
+    <string name="qr_code_available">A QR-kód elérhető</string>
+    <string name="exist">✅ létezik</string>
+    <string name="keep_writting">⚠️ Írjon tovább</string>
+    <string name="doesn_t_exist2">❌ nem létezik!</string>
+    <string name="message_successfully_sent_to">Üzenet sikeresen elküldve %1$s</string>
+    <string name="messages_can_only_be_sent_to_existing_license_plates">❗ Az üzenetek csak meglévő rendszámokra küldhetőek.</string>
+    <string name="login_fail">bejelentkezés sikertelen</string>
+</resources>

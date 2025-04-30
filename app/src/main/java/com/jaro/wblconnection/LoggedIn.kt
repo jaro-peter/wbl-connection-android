@@ -100,7 +100,7 @@ class LoggedIn : AppCompatActivity() {
         }
 
         changePasswordText.setOnClickListener {
-            // TODO
+
         }
         myMessagesButton.setOnClickListener(){
          val intent = Intent(this, MyMessages::class.java)

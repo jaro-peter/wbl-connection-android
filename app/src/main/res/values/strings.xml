@@ -130,4 +130,5 @@
     <string name="doesn_t_exist2">❌ doesn\'t exist!</string>
     <string name="message_successfully_sent_to">Message successfully sent to %1$s</string>
     <string name="messages_can_only_be_sent_to_existing_license_plates">❗ Messages can only be sent to existing license plates.</string>
+    <string name="login_fail">login fail</string>
 </resources>

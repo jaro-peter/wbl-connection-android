@@ -72,8 +72,7 @@ class Basic : AppCompatActivity() {
                     intent.putExtra("licencePlate", licencePlate)
                     startActivity(intent)
                 } else {
-                    Toast.makeText(this,
-                        getString(string.successful), Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, getString(string.login_fail), Toast.LENGTH_LONG).show()
                 }
             }
 
